@@ -121,6 +121,25 @@ Output: `outputs/custom_traj/<image_name>.mp4`
 
 > **Note:** The model may hallucinate objects along the predefined trajectory, which can lead to degenerated results. Additionally, the input trajectory is always relative to the monocular depth estimated from the first frame, so the actual camera path may differ from what you expect. You can adjust `--pose_scale` to scale your trajectory.
 
+Local navigation examples:
+
+```bash
+# Prepares EscRoom2.png, captions.json, caption_sections.txt, and trajectory.npz.
+PREPARE_ONLY=1 bash scripts/run_navigation_custom_traj_and_gs.sh
+
+# Generates videos and then runs VIPE + DA3 Gaussian reconstruction.
+bash scripts/run_navigation_custom_traj_and_gs.sh
+
+# Video-only run.
+SKIP_GS=1 bash scripts/run_navigation_custom_traj_and_gs.sh
+```
+
+This creates:
+- `assets/custom_trajectory_examples/escroom2_navigation/`
+- `assets/custom_trajectory_examples/supermarket_navigation/`
+- `outputs/navigation_custom_traj/videos/<name>.mp4`
+- `outputs/navigation_custom_traj/gs/<name>/reconstructed_scene.ply`
+
 **Example outputs (Step 1 video generation | Step 2 GS reconstruction):**
 
 <table><tr>

@@ -1,0 +1,25 @@
+Caption sections for Lyra-2 custom trajectory inference. Default active num_frames=481.
+captions.json stores each section by start frame; the next start frame implies the previous section's end.
+Keys >= num_frames are ignored by the current loader, so key 481 is active only if NUM_FRAMES > 481.
+
+[0-80] (active)
+A wide first-person view inside a modern escape room lounge with red carpet, wood-paneled walls, patterned wallpaper, black leather chairs, a yellow armchair, a dark counter, monitors, framed clue art, wall lamps, a bookcase, a potted plant, and an open door on the right. Everything is perfectly still.
+
+[81-160] (active)
+The camera glides forward across the red carpet toward the right-side doorway. The chairs, counter, monitors, framed pictures, wall lamps, patterned wallpaper, plant, shelves, and door remain frozen in the same warm interior lighting.
+
+[161-240] (active)
+The camera passes through the open door and begins entering the connecting passage. The escape room behind it, including the counter, chairs, wall patterns, monitors, framed clue art, and lamps, stays motionless and realistic.
+
+[241-320] (active)
+After passing the doorway, the camera turns left into a narrow corridor. The corridor walls, trim, carpet, door frame, dim lamps, and puzzle-room details remain static while only the viewpoint rotates and advances.
+
+[321-400] (active)
+The camera moves forward down the corridor, looking along the connected escape-room passage. Warm light, textured wall surfaces, carpet, door frames, shelves, and hidden-room details remain unchanged and still.
+
+[401-480] (active)
+At the end of the corridor, the camera completes a smooth U-turn and continues forward again. The hallway and room edges rotate around the viewer, but all objects, lights, furniture, plants, doors, and wall patterns remain fixed in place.
+
+[481-481] (inactive at default NUM_FRAMES)
+A final forward-moving view after the U-turn shows the connected corridor and nearby room geometry. The same quiet escape-room atmosphere, realistic textures, warm lamps, patterned walls, carpet, and doorway details remain perfectly still.
+
